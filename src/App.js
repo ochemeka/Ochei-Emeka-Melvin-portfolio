@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Menu, X, Moon, Sun, Github, Linkedin, Twitter, Mail, Phone, MapPin, Code, Globe, ShoppingCart, Smartphone, Database, Palette, Calendar, ExternalLink, Clock, CheckCircle, Users, Building2, Handshake, Instagram, TrendingUp, BarChart3 } from 'lucide-react';
-
 const Portfolio = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-
   // Hero slides data
   const heroSlides = [
     {
@@ -28,19 +26,12 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
     },
     {
-  title: "Tech Trainer & Mentor",
-  subtitle: "Empowering the Next Generation",
-  description: "Offering private and corporate training in web development, UI/UX, and career-focused tech skills.",
-  image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-}
-//     {
-//   title: "UI/UX Designer",
-//   subtitle: "Designing User-Centered Interfaces",
-//   description: "I focus on clean, functional, and intuitive designs that enhance user engagement and product usability.",
-//   image: "https://unsplash.com/photos/person-holding-iphone-turned-on-mxPiMiz7KCo"
-// }
+      title: "Tech Trainer & Mentor",
+      subtitle: "Empowering the Next Generation",
+      description: "Offering private and corporate training in web development, UI/UX, and career-focused tech skills.",
+      image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+    }
   ];
-
   // Services data
 const services = [
   {
@@ -89,8 +80,6 @@ const services = [
     description: "Tailored training programs for individuals, teams, and organizations on modern web development, software engineering, and digital tools."
   }
 ];
-
-
   // Pricing data
   const pricingPlans = [
     {
@@ -152,67 +141,106 @@ const services = [
     }
   ];
 
-  // Recent Projects/Jobs data
+  // ── REAL PROJECTS FROM PORTFOLIO ──
   const recentProjects = [
     {
-      title: "E-commerce Platform for Fashion Brand",
-      client: "StyleHub Nigeria",
+      title: "Tender365 — Business Management Platform",
+      client: "Tender365",
       status: "completed",
-      duration: "3 months",
-      description: "Built a comprehensive e-commerce platform with payment integration, inventory management, and customer analytics.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80",
-      completedDate: "Jan 2025"
+      duration: "4 months",
+      description: "A full-featured SaaS with POS, inventory management, invoice generation, sales reports, Bill of Quantity, customer management, referral wallet system, and multi-shop support built for Nigerian SMEs.",
+      technologies: ["Laravel", "Tailwind CSS", "Alpine.js", "MySQL"],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80",
+      completedDate: "2025",
+      url: "#"
     },
     {
-      title: "Mobile Banking App",
-      client: "FinTech Solutions Ltd",
-      status: "ongoing",
-      duration: "6 months",
-      description: "Developing a secure mobile banking application with biometric authentication and real-time transactions.",
-      technologies: ["React Native", "Firebase", "Node.js", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80",
-      progress: "75%"
-    },
-    {
-      title: "Restaurant Management System",
-      client: "Delicious Bites Chain",
+      title: "WirelessNG — Broadband Service Provider",
+      client: "WirelessNG",
       status: "completed",
       duration: "2 months",
-      description: "Created a complete restaurant management system with POS, inventory tracking, and staff management.",
-      technologies: ["Vue.js", "Laravel", "MySQL", "PWA"],
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80",
-      completedDate: "Dec 2024"
+      description: "Full-stack website for a Nigerian broadband ISP featuring service plans, coverage information, customer portal, and online support.",
+      technologies: ["WordPress", "PHP", "CSS3", "MySQL"],
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80",
+      completedDate: "2023",
+      url: "https://wirelessng.com"
     },
     {
-      title: "Learning Management Platform",
-      client: "EduTech Academy",
-      status: "ongoing",
-      duration: "4 months",
-      description: "Building an interactive learning platform with video streaming, quizzes, and progress tracking.",
-      technologies: ["Next.js", "Python", "Django", "AWS"],
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80",
-      progress: "45%"
-    },
-    {
-      title: "Healthcare Appointment System",
-      client: "MediCare Clinics",
+      title: "Naija Restaurant — Food Ordering Platform",
+      client: "Naija Restaurant",
       status: "completed",
-      duration: "2.5 months",
-      description: "Developed a comprehensive appointment booking system with patient records and telemedicine features.",
-      technologies: ["Angular", "Express.js", "MongoDB", "Socket.io"],
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80",
-      completedDate: "Nov 2024"
+      duration: "2 months",
+      description: "Online food ordering platform for a Nigerian restaurant with menu browsing, cart management, order placement, and an admin panel for order tracking.",
+      technologies: ["Laravel", "PHP", "MySQL", "JavaScript"],
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80",
+      completedDate: "2023",
+      url: "https://naijarestaurant.com"
     },
     {
-      title: "Real Estate Platform",
-      client: "PropTech Innovations",
+      title: "Alfao Networks — ISP Solutions",
+      client: "Alfao Networks",
+      status: "completed",
+      duration: "1.5 months",
+      description: "Corporate website for an ISP solutions company, showcasing internet packages, enterprise services, technical support, and client onboarding.",
+      technologies: ["WordPress", "PHP", "Bootstrap", "MySQL"],
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80",
+      completedDate: "2023",
+      url: "https://alfaonetworks.com"
+    },
+    {
+      title: "US Solution Ltd — Oil & Gas & Logistics",
+      client: "US Solution Ltd",
+      status: "completed",
+      duration: "2 months",
+      description: "Corporate platform for an Oil & Gas and logistics company with service listings, project portfolio, team profiles, and a client inquiry system.",
+      technologies: ["WordPress", "PHP", "MySQL", "CSS3"],
+      image: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80",
+      completedDate: "2022",
+      url: "https://ussolutionltd.com"
+    },
+    {
+      title: "Light Lead Achievers Academy",
+      client: "Light Lead Achievers Academy",
+      status: "completed",
+      duration: "2 months",
+      description: "Educational platform for a learning institution featuring course listings, admissions management, student resources, news updates, and event management.",
+      technologies: ["WordPress", "LMS Plugin", "PHP", "MySQL"],
+      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80",
+      completedDate: "2022",
+      url: "https://lightleadachieversacademy.com"
+    },
+    {
+      title: "Lagoon Suite — Hotel Website",
+      client: "Lagoon Suite",
+      status: "completed",
+      duration: "1.5 months",
+      description: "Hotel website for a Lagos hospitality brand featuring room showcases, booking inquiry forms, photo gallery, amenities highlights, and location info.",
+      technologies: ["WordPress", "PHP", "CSS3", "JavaScript"],
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80",
+      completedDate: "2022",
+      url: "https://lagoonsuite.com"
+    },
+    {
+      title: "Contact365 — Local Business Directory",
+      client: "Cnamopr Properties",
       status: "ongoing",
-      duration: "5 months",
-      description: "Creating a modern real estate platform with virtual tours, mortgage calculators, and agent management.",
-      technologies: ["React", "TypeScript", "Node.js", "Three.js"],
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80",
-      progress: "60%"
+      duration: "3 months",
+      description: "A Nigerian local business directory platform enabling users to discover and list businesses by category, location, and industry type.",
+      technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80",
+      progress: "65%",
+      url: "https://www.contact365.cnamoproperties.com"
+    },
+    {
+      title: "AI Job Interview Prep Platform",
+      client: "Personal Project",
+      status: "ongoing",
+      duration: "3 months",
+      description: "An AI-powered platform helping job seekers practice and prepare for interviews with role-based question sets, mock sessions, and instant AI feedback.",
+      technologies: ["Next.js", "Python", "AI/LLM", "Vercel"],
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80",
+      progress: "70%",
+      url: "https://interview-prep-lime.vercel.app"
     }
   ];
 
@@ -255,7 +283,6 @@ const services = [
       partnership: "Strategic Partner"
     }
   ];
-
   // Auto-slide functionality
   useEffect(() => {
     const timer = setInterval(() => {
@@ -263,12 +290,10 @@ const services = [
     }, 5000);
     return () => clearInterval(timer);
   }, [heroSlides.length]);
-
   // Handle theme toggle
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
-
   // Navigation handler
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
@@ -278,11 +303,9 @@ const services = [
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
   const themeClasses = isDarkMode 
     ? 'bg-gray-900 text-white' 
     : 'bg-white text-gray-900';
-
   return (
     <div className={`min-h-screen transition-all duration-300 ${themeClasses}`}>
       {/* Navigation */}
@@ -315,7 +338,6 @@ const services = [
                 ))}
               </div>
             </div>
-
             {/* Theme Toggle & Mobile Menu */}
             <div className="flex items-center space-x-4">
               <button
@@ -340,7 +362,6 @@ const services = [
             </div>
           </div>
         </div>
-
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className={`md:hidden ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50'} border-t ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
@@ -364,7 +385,6 @@ const services = [
           </div>
         )}
       </nav>
-
       {/* Hero Section with Slider */}
       <section id="home" className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
@@ -411,7 +431,6 @@ const services = [
             </div>
           ))}
         </div>
-
         {/* Slider Navigation */}
         <button
           onClick={() => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)}
@@ -425,7 +444,6 @@ const services = [
         >
           <ChevronRight className="w-6 h-6" />
         </button>
-
         {/* Slide Indicators */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
           {heroSlides.map((_, index) => (
@@ -439,7 +457,6 @@ const services = [
           ))}
         </div>
       </section>
-
       {/* Services Section */}
       <section id="services" className={`py-20 ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -468,7 +485,6 @@ const services = [
           </div>
         </div>
       </section>
-
       {/* Recent Projects Section */}
       <section id="projects" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -551,7 +567,7 @@ const services = [
                     )}
                   </div>
                   
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
@@ -565,13 +581,25 @@ const services = [
                       </span>
                     ))}
                   </div>
+
+                  {/* Live URL Button */}
+                  {project.url && project.url !== '#' && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Visit Live Site
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-
       {/* Partners Section */}
       <section id="partners" className={`py-20 ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -768,7 +796,6 @@ const services = [
           </div>
         </div>
       </section>
-
       {/* Contact Section */}
       <section id="contact" className={`py-20 ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -803,7 +830,9 @@ const services = [
                 <h4 className="text-lg font-semibold mb-4">Follow Me</h4>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://github.com/ochemeka"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`p-3 rounded-full transition-colors duration-200 ${
                       isDarkMode
                         ? 'bg-gray-700 hover:bg-gray-600 text-gray-300'
@@ -813,7 +842,7 @@ const services = [
                     <Github className="w-6 h-6" />
                   </a>
                   <a
-                    href="https://github.com/ochemeka"
+                    href="#"
                     className={`p-3 rounded-full transition-colors duration-200 ${
                       isDarkMode
                         ? 'bg-gray-700 hover:bg-gray-600 text-gray-300'
@@ -824,24 +853,26 @@ const services = [
                   </a>
                   <a
                     href="https://x.com/therealochemeka"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`p-3 rounded-full transition-colors duration-200 ${
                       isDarkMode
                         ? 'bg-gray-700 hover:bg-gray-600 text-gray-300'
                         : 'bg-white hover:bg-gray-100 text-gray-700'
                     }`}
                   >
-                    
                     <Twitter className="w-6 h-6" />
                   </a>
-                   <a
+                  <a
                     href="https://www.instagram.com/e.o.melvin/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`p-3 rounded-full transition-colors duration-200 ${
                       isDarkMode
                         ? 'bg-gray-700 hover:bg-gray-600 text-gray-300'
                         : 'bg-white hover:bg-gray-100 text-gray-700'
                     }`}
                   >
-                    
                     <Instagram className="w-6 h-6" />
                   </a>
                 </div>
@@ -918,7 +949,6 @@ const services = [
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className={`py-8 ${isDarkMode ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-200'} border-t`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -932,5 +962,4 @@ const services = [
     </div>
   );
 };
-
 export default Portfolio;
