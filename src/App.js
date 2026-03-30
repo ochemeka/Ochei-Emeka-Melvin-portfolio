@@ -155,7 +155,7 @@ const Portfolio = () => {
       duration: "Demo-Testing stage",
       description: "A full-featured SaaS with POS, inventory management, invoice generation, sales reports, Bill of Quantity, customer management, referral wallet system, and multi-shop support built for Nigerian SMEs.",
       technologies: ["Laravel", "Tailwind CSS", "Alpine.js", "MySQL"],
-      image: "/images/tender364.png",
+      image: "/tender364.png",
       completedDate: "Ongoing",
       url: "http://app.tender365.lightleadachieversacademy.com/"
     },
@@ -166,7 +166,7 @@ const Portfolio = () => {
       duration: "2 months",
       description: "Educational platform for a learning institution featuring course listings, admissions management, student resources, news updates, and event management.",
       technologies: ["WordPress", "LMS Plugin", "PHP", "MySQL"],
-      image: "/images/lightlead-achievers.png",
+      : "/lightlead-achievers.png",
       completedDate: "2025",
       url: "https://lightleadachieversacademy.com"
     },
@@ -177,7 +177,7 @@ const Portfolio = () => {
       duration: "2 months",
       description: "Full-stack website for a Nigerian broadband ISP featuring service plans, coverage information, customer portal, and online support.",
       technologies: ["WordPress", "PHP", "CSS3", "MySQL"],
-      image: "/images/wirelessng.png",
+      image: "//wirelessng.png",
       completedDate: "2023",
       url: "https://wirelessng.com"
     },
@@ -188,7 +188,7 @@ const Portfolio = () => {
       duration: "2 months",
       description: "Online food ordering platform for a Nigerian restaurant with menu browsing, cart management, order placement, and an admin panel for order tracking.",
       technologies: ["Laravel", "PHP", "MySQL", "JavaScript"],
-      image: "/images/Naija Restaurant.png",
+      image: "/Naija Restaurant.png",
       completedDate: "2023",
       url: "https://naijarestaurant.com"
     },
@@ -199,7 +199,7 @@ const Portfolio = () => {
       duration: "1.5 months",
       description: "Corporate website for an ISP solutions company, showcasing internet packages, enterprise services, technical support, and client onboarding.",
       technologies: ["WordPress", "PHP", "Bootstrap", "MySQL"],
-      image: "/images/Alfao.png",
+      image: "/Alfao.png",
       completedDate: "2023",
       url: "https://alfaonetworks.com"
     },
@@ -210,7 +210,7 @@ const Portfolio = () => {
       duration: "2 months",
       description: "Corporate platform for an Oil & Gas and logistics company with service listings, project portfolio, team profiles, and a client inquiry system.",
       technologies: ["WordPress", "PHP", "MySQL", "CSS3"],
-      image: "/images/US Solution-Ltd.png",
+      image: "/US Solution-Ltd.png",
       completedDate: "2022",
       url: "https://ussolutionltd.com"
     },
@@ -222,7 +222,7 @@ const Portfolio = () => {
       duration: "2.5 months",
       description: "A modern real estate platform for a leading property company in Nigeria, featuring property listings, advanced search filters, virtual property tours, agent profiles, mortgage calculator, and a user-friendly inquiry system for buyers, sellers, and renters.",
       technologies: ["WordPress", "PHP", "CSS3", "JavaScript", "Leaflet Maps"],
-      image: "/images/cnamoproperties.png",
+      image: "/cnamoproperties.png",
       completedDate: "2025",
       url: "https://cnamoproperties.com"
     },
@@ -233,7 +233,7 @@ const Portfolio = () => {
       duration: "3 months",
       description: "A Nigerian local business directory platform enabling users to discover and list businesses by category, location, and industry type.",
       technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-      image: "/images/contact365.png",
+      image: "/contact365.png",
       progress: "65%",
       url: "https://www.contact365.cnamoproperties.com"
     },
@@ -244,7 +244,7 @@ const Portfolio = () => {
       duration: "3 months",
       description: "An AI-powered platform helping job seekers practice and prepare for interviews with role-based question sets, mock sessions, and instant AI feedback.",
       technologies: ["Next.js", "Python", "AI/LLM", "Vercel"],
-      image: "/images/interview-prep.png",
+      image: "/interview-prep.png",
       progress: "70%",
       url: "https://interview-prep-lime.vercel.app"
     }
@@ -824,7 +824,7 @@ const Portfolio = () => {
           {/* Profile Image & About */}
           <div className="text-center mb-16">
             <img
-              src="/images/KKK.jpg"
+              src="/KKK.jpg"
               alt="Ochei Emeka Melvin"
               className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover mx-auto mb-6 border-4 border-blue-600 shadow-2xl"
             />
