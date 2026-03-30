@@ -824,7 +824,7 @@ const Portfolio = () => {
           {/* Profile Image & About */}
           <div className="text-center mb-16">
             <img
-              src="/KKK.jpg"
+              src="Mr-Melvin.jpeg"
               alt="Ochei Emeka Melvin"
               className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover mx-auto mb-6 border-4 border-blue-600 shadow-2xl"
             />
