@@ -166,7 +166,7 @@ const Portfolio = () => {
       duration: "2 months",
       description: "Educational platform for a learning institution featuring course listings, admissions management, student resources, news updates, and event management.",
       technologies: ["WordPress", "LMS Plugin", "PHP", "MySQL"],
-      : "/lightlead-achievers.png",
+      image: "/lightlead-achievers.png",
       completedDate: "2025",
       url: "https://lightleadachieversacademy.com"
     },
@@ -177,7 +177,7 @@ const Portfolio = () => {
       duration: "2 months",
       description: "Full-stack website for a Nigerian broadband ISP featuring service plans, coverage information, customer portal, and online support.",
       technologies: ["WordPress", "PHP", "CSS3", "MySQL"],
-      image: "//wirelessng.png",
+      image: "/wirelessng.png",
       completedDate: "2023",
       url: "https://wirelessng.com"
     },
