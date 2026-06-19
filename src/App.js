@@ -159,6 +159,17 @@ const Portfolio = () => {
       completedDate: "Ongoing",
       url: "http://app.tender365.lightleadachieversacademy.com/"
     },
+    {
+      title: "Abis Farm — ERP & CRM Business Management System",
+      client: "Abis Farm",
+      status: "ongoing",
+      duration: "Ongoing",
+      description: "An integrated ERP and CRM platform built for agribusiness operations, covering customer relationship management, resource planning, inventory tracking, and streamlined business workflows.",
+      technologies: ["Laravel", "MySQL", "Tailwind CSS"],
+      image: "/abisfarms.png",
+      progress: "80%",
+      url: "https://abisfarms.lightleadachieversacademy.com"
+    },
      {
       title: "Light Lead Achievers Academy",
       client: "Light Lead Achievers Academy",
