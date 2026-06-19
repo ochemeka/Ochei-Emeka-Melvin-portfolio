@@ -8,6 +8,53 @@ const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const currentYear = new Date().getFullYear();
 
+  // WhatsApp number (international format, no + or leading 0)
+  const whatsappNumber = "2348067543218";
+
+  // Contact form state
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    projectType: '',
+    message: ''
+  });
+
+  // Partnership form state
+  const [partnerForm, setPartnerForm] = useState({
+    company: '',
+    partnershipType: '',
+    proposal: ''
+  });
+
+  const handleSendContactMessage = () => {
+    const { name, email, projectType, message } = contactForm;
+    if (!name || !message) {
+      alert('Please fill in at least your name and message before sending.');
+      return;
+    }
+    const text =
+      `New Project Inquiry from Portfolio Website\n\n` +
+      `Name: ${name}\n` +
+      `Email: ${email || 'Not provided'}\n` +
+      `Project Type: ${projectType || 'Not specified'}\n\n` +
+      `Message:\n${message}`;
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
+  };
+
+  const handleSendPartnershipInquiry = () => {
+    const { company, partnershipType, proposal } = partnerForm;
+    if (!company || !proposal) {
+      alert('Please fill in at least the company name and proposal before sending.');
+      return;
+    }
+    const text =
+      `New Partnership Inquiry from Portfolio Website\n\n` +
+      `Company/Organization: ${company}\n` +
+      `Partnership Type: ${partnershipType || 'Not specified'}\n\n` +
+      `Proposal:\n${proposal}`;
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
+  };
+
   // Hero slides data
   const heroSlides = [
     {
@@ -710,6 +757,8 @@ const Portfolio = () => {
                     <label className="block text-sm font-medium mb-2">Company/Organization</label>
                     <input
                       type="text"
+                      value={partnerForm.company}
+                      onChange={(e) => setPartnerForm({ ...partnerForm, company: e.target.value })}
                       className={`w-full px-4 py-2 rounded-lg border transition-colors duration-200 ${
                         isDarkMode
                           ? 'bg-gray-700 border-gray-500 text-white placeholder-gray-300'
@@ -721,6 +770,8 @@ const Portfolio = () => {
                   <div>
                     <label className="block text-sm font-medium mb-2">Partnership Type</label>
                     <select
+                      value={partnerForm.partnershipType}
+                      onChange={(e) => setPartnerForm({ ...partnerForm, partnershipType: e.target.value })}
                       className={`w-full px-4 py-2 rounded-lg border transition-colors duration-200 ${
                         isDarkMode
                           ? 'bg-gray-700 border-gray-500 text-white'
@@ -728,11 +779,11 @@ const Portfolio = () => {
                       } focus:outline-none focus:ring-2 focus:ring-blue-600`}
                     >
                       <option value="">Select partnership type</option>
-                      <option value="joint-venture">Joint Venture</option>
-                      <option value="agency">Agency Partnership</option>
-                      <option value="tech">Technology Partnership</option>
-                      <option value="referral">Referral Partnership</option>
-                      <option value="other">Other</option>
+                      <option value="Joint Venture">Joint Venture</option>
+                      <option value="Agency Partnership">Agency Partnership</option>
+                      <option value="Technology Partnership">Technology Partnership</option>
+                      <option value="Referral Partnership">Referral Partnership</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                 </div>
@@ -740,6 +791,8 @@ const Portfolio = () => {
                   <label className="block text-sm font-medium mb-2">Partnership Proposal</label>
                   <textarea
                     rows="4"
+                    value={partnerForm.proposal}
+                    onChange={(e) => setPartnerForm({ ...partnerForm, proposal: e.target.value })}
                     className={`w-full px-4 py-2 rounded-lg border transition-colors duration-200 ${
                       isDarkMode
                         ? 'bg-gray-700 border-gray-500 text-white placeholder-gray-300'
@@ -751,7 +804,7 @@ const Portfolio = () => {
                 <div className="mt-4">
                   <button
                     type="button"
-                    onClick={() => alert('Thank you for your partnership interest! I will get back to you within 24 hours.')}
+                    onClick={handleSendPartnershipInquiry}
                     className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-200"
                   >
                     Submit Partnership Inquiry
@@ -938,6 +991,8 @@ const Portfolio = () => {
                   <label className="block text-sm font-medium mb-2">Name</label>
                   <input
                     type="text"
+                    value={contactForm.name}
+                    onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
                     className={`w-full px-4 py-3 rounded-lg border transition-colors duration-200 ${
                       isDarkMode
                         ? 'bg-gray-600 border-gray-500 text-white placeholder-gray-300'
@@ -950,6 +1005,8 @@ const Portfolio = () => {
                   <label className="block text-sm font-medium mb-2">Email</label>
                   <input
                     type="email"
+                    value={contactForm.email}
+                    onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
                     className={`w-full px-4 py-3 rounded-lg border transition-colors duration-200 ${
                       isDarkMode
                         ? 'bg-gray-600 border-gray-500 text-white placeholder-gray-300'
@@ -961,6 +1018,8 @@ const Portfolio = () => {
                 <div>
                   <label className="block text-sm font-medium mb-2">Project Type</label>
                   <select
+                    value={contactForm.projectType}
+                    onChange={(e) => setContactForm({ ...contactForm, projectType: e.target.value })}
                     className={`w-full px-4 py-3 rounded-lg border transition-colors duration-200 ${
                       isDarkMode
                         ? 'bg-gray-600 border-gray-500 text-white'
@@ -968,18 +1027,20 @@ const Portfolio = () => {
                     } focus:outline-none focus:ring-2 focus:ring-blue-600`}
                   >
                     <option value="">Select a service</option>
-                    <option value="corporate">Professional/Corporate Website</option>
-                    <option value="ecommerce">E-commerce Website</option>
-                    <option value="dmarketing">Digital Marketing</option>
-                    <option value="danalysis">Data Analysis</option>
-                    <option value="mobile">Mobile Application</option>
-                    <option value="custom">Custom Solution</option>
+                    <option value="Professional/Corporate Website">Professional/Corporate Website</option>
+                    <option value="E-commerce Website">E-commerce Website</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Data Analysis">Data Analysis</option>
+                    <option value="Mobile Application">Mobile Application</option>
+                    <option value="Custom Solution">Custom Solution</option>
                   </select>
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Message</label>
                   <textarea
                     rows="5"
+                    value={contactForm.message}
+                    onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
                     className={`w-full px-4 py-3 rounded-lg border transition-colors duration-200 ${
                       isDarkMode
                         ? 'bg-gray-600 border-gray-500 text-white placeholder-gray-300'
@@ -990,10 +1051,10 @@ const Portfolio = () => {
                 </div>
                 <button
                   type="button"
-                  onClick={() => alert('Thank you for your interest! Please contact me directly via email or phone.')}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-200"
+                  onClick={handleSendContactMessage}
+                  className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2"
                 >
-                  Send Message
+                  Send via WhatsApp
                 </button>
               </div>
             </div>
