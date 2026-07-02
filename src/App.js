@@ -251,6 +251,17 @@ const Portfolio = () => {
       url: "https://naijarestaurant.com"
     },
     {
+  title: "Thieemor'z Meals — WhatsApp Food Ordering Platform",
+  client: "Thieemor'z Meals",
+  status: "completed",
+  duration: "1 month",
+  description: "Fine African & Continental cuisine ordering platform with menu browsing and direct WhatsApp-based order placement, built for a Nigerian restaurant brand.",
+  technologies: ["React", "JavaScript", "Vercel"],
+  image: "/theemoir.png",
+  completedDate: "2026",
+  url: "https://thieemorz-meals.vercel.app/"
+},
+    {
       title: "Alfao Networks — ISP Solutions",
       client: "Alfao Networks",
       status: "completed",
