@@ -304,7 +304,7 @@ const Portfolio = () => {
       technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
       image: "/contact365.png",
       progress: "65%",
-      url: "contact365-ljwinuiks-ocheis-projects.vercel.app"
+      url: "https://contact365.vercel.app"
     },
     {
       title: "AI Job Interview Prep Platform",
